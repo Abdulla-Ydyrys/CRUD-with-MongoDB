@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title><%= title %></title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <style type="text/css">
+        .header h1{
+          margin-top: 60px;
+        }
+        .text-right {
+         margin-top: -45px;
+         margin-bottom: 20px;
+       }
+     </style>
+</head>
+<body>
+  <div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header page-header text-left text-info">
+            <h1>User details</h1> 
+            <div class="text-right">
+              <a href="/create" class="btn btn-info">Create New User</a>
+            </div>                       
+          </div><br>
+          <% if(data.length){ %> 
+          <table class='table table-bordered table-striped'>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+             <% for(var i = 0; i< data.length; i++) {%>  
+             <tr>
+                <th><%= data[i]["_id"] %></th>
+                <td><%= data[i]["name"] %></td>
+                <td><%= data[i]["surname"] %></td>
+                <td>
+                  <a href='edit/<%=data[i]["_id"] %>' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>
+                  <a href='delete/<%=data[i]["_id"] %>' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>                         
+                </td>
+             </tr>
+             <% } %>
+            </tbody>
+          </table>
+          <%}else{ %>
+          <h1>NO USERS FOUND</h1>
+          <% } %> 
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+	<style>
+		.container{
+			width: 650px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header text-info">
+						<h2>Update User</h2>
+					</div>
+
+					<form action="/update/<%= id %>" method="post">
+						<div class="alert alert-info fade in">
+							<div class="form-group">
+								<label >Name</label>
+								<input type="text" class="form-control" name="name" id="name" value="<%= name %>" placeholder="Enter name">
+							</div>
+							<div class="form-group">
+								<label>Surname</label>
+								<input type="text" class="form-control" name="surname" id="surname" value="<%= surname %>" placeholder="Enter surname">
+							</div>
+							<button type="submit" class="btn btn-info">Update</button>
+							<a href="/" class="btn btn-default">Cancel</a>
+						</div>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

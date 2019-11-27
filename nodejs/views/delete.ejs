@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style>
+        .container{
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header text-info">
+                        <h1>Delete User</h1>
+                    </div>
+                    <form action="/remove/<%= id %>" method="post">
+                        <div class="alert alert-info fade in">
+                            <p>Are you sure you want to delete this User?</p><br>
+                            <input type="submit" value="Yes" class="btn btn-danger">
+                            <a href="/" class="btn btn-default">No</a>
+                        </div>
+                    </form>
+                </div>
+            </div>        
+        </div>
+    </div>
+</body>
+</html>
